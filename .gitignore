@@ -1,0 +1,40 @@
+# Local secrets and environment files.
+.env
+.env.*
+.env~
+.env.*~
+.local/
+connection.json
+
+# Local databases, including SQLite journal / WAL sidecars.
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+
+# Android signing credentials.
+*.jks
+*.keystore
+keystore.properties
+
+# Android / IDE output and machine-specific configuration.
+.gradle/
+.idea/
+local.properties
+**/build/
+*.iml
+*.apk
+*.aab
+
+# Local logs.
+*.log
+
+# OS and editor leftovers.
+.DS_Store
+*.swp
+*.swo
+
+# Local project context for coding agents.
+/AGENTS.md

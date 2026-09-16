@@ -1,0 +1,4 @@
+<resources>
+    <string name="close">Close</string>
+    <string name="accessibility_description">Your orange button captures the current screen and opens a question panel. When you ask, your transcribed question and optional screenshot go directly to OpenAI using your API key. Android handles speech recognition. Closing the panel discards its screenshot and cancels the request.</string>
+</resources>
