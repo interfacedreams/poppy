@@ -1,5 +1,16 @@
 # Verification — 2026-09-15
 
+## Public release 0.5 — 2026-09-16
+
+- Included the fresh-install F12 orange-button default and bumped version to 0.5 (code 5).
+- assembleDebug, lintDebug, assembleRelease, and lintRelease passed. APK version and signature verified; signing certificate matches the 0.4 distribution APK.
+- Fresh-install physical-button testing remains unverified. No tablet data was cleared or installation changed.
+
+## Fresh-install orange button — 2026-09-16
+
+- Default the accessibility service to KEYCODE_F12, the orange-button code previously verified on the DC-1, when no saved button exists. Existing saved mappings remain unchanged.
+- Updated installation and release documentation. assembleDebug and lintDebug pass. A fresh installation and physical button press still need device verification; existing user data was not cleared.
+
 ## Saved key indicator — 2026-09-16
 
 - An unfocused, empty key field shows masked dots and Saved when a stored key exists. Focusing shows Enter a replacement key with an empty input. The saved credential is never loaded into the field. Leaving it empty, including pressing Save key, preserves the existing key; Remove key explicitly deletes it.

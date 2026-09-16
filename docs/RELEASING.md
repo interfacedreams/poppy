@@ -36,4 +36,4 @@ Without this file, release builds are unsigned; debug builds still work normally
 
 Commit and push the release source, create a matching version tag such as `v0.4`, and create a GitHub Release with that tag. Attach only `Poppy.apk` and its checksum file. Use a normal release if it should be served by GitHub's `/releases/latest/` link; GitHub excludes prereleases from that link.
 
-Release notes should describe tested devices, setup instructions, known limitations, and whether the APK itself was tested on hardware. The current fresh-install limitation is that hardware-button configuration is not exposed in the app; do not advertise the developer's saved orange-button mapping as automatic setup.
+Release notes should describe tested devices, setup instructions, known limitations, and whether the APK itself was tested on hardware. Fresh installations default to the DC-1 orange button (F12) once accessibility is enabled; existing saved button choices are preserved. Verify the default on a fresh installation before marking that path as tested.

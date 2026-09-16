@@ -30,6 +30,8 @@ import java.io.ByteArrayOutputStream;
 import java.lang.ref.WeakReference;
 
 public class PilotService extends AccessibilityService {
+    // The DC-1 orange button reports F12 (verified on the tablet).
+    private static final int DEFAULT_BUTTON_KEY_CODE = KeyEvent.KEYCODE_F12;
     private static WeakReference<PilotService> reference = new WeakReference<>(null);
     public static PilotService current() { return reference.get(); }
     private final Handler handler = new Handler(Looper.getMainLooper());
@@ -60,7 +62,7 @@ public class PilotService extends AccessibilityService {
     @Override protected void onServiceConnected() {
         reference = new WeakReference<>(this);
         manager = getSystemService(WindowManager.class);
-        keyCode = getSharedPreferences("pilot", MODE_PRIVATE).getInt("keyCode", -1);
+        keyCode = getSharedPreferences("pilot", MODE_PRIVATE).getInt("keyCode", DEFAULT_BUTTON_KEY_CODE);
         registerReceiver(screenOff, new IntentFilter(Intent.ACTION_SCREEN_OFF));
         receiverRegistered = true;
         Log.i("DaylightPilot", "Service connected; selected key=" + keyCode);
